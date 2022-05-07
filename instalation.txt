@@ -1,0 +1,15 @@
+@chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
+
+react-icons --save
+
+react-router-dom@6
+
+recharts
+
+axios
+
+stripe
+
+npm install @stripe/stripe-js
+
+npm i @chakra-ui/icons
