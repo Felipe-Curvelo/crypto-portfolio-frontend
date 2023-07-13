@@ -13,6 +13,8 @@ import {
     SimpleGrid,
     HStack,
     Flex,
+    Divider,
+    AbsoluteCenter
   } from '@chakra-ui/react';
 
 import { AuthContext } from '../contexts/auth';
@@ -20,7 +22,7 @@ import Footer from "../main_page/Footer"
 
 
 const LoginPage = () => {
-    const { setEmail, setPassword, email, password, handleLogin, loading } = useContext(AuthContext);
+    const { setEmail, setPassword, email, password, handleLogin, handleTestLogin, loading } = useContext(AuthContext);
 
     return (
         <>
@@ -129,7 +131,7 @@ const LoginPage = () => {
                             bgGradient="linear(to-r, red.400,pink.400)"
                             color={'white'}
                             _hover={{
-                                bgGradient: 'linear(to-r, red.400,pink.400)',
+                                bgGradient: 'linear(to-r, red.500,pink.500)',
                                 boxShadow: 'xl',
                             }}
                             onClick={handleLogin}
@@ -137,6 +139,33 @@ const LoginPage = () => {
                             >
                             {loading ? "Processando..." : "Entrar"}
                             </Button>
+                            <Box position='relative' padding='6' style={{ color: 'gray', fontSize: '10px' }}>
+                                <Divider borderColor={'gray'}/>
+                                    <AbsoluteCenter >
+                                        <Box bg= {'white'}>
+                                            Ou
+                                        </Box>
+                                    </AbsoluteCenter>
+                            </Box>
+                            <Button
+                            fontFamily={'heading'}
+                            w={'full'}
+                            bgGradient="linear(to-r, blue.400,green.400)"
+                            color={'white'}
+                            _hover={{
+                                bgGradient: 'linear(to-r, blue.500,green.500)',
+                                boxShadow: 'xl',
+                            }}
+                            onClick={handleTestLogin}
+                            isDisabled={loading}
+                            >
+                            {loading ? "Processando..." : "Entrar usando usuário teste"}
+                            </Button>
+                            <Stack spacing={4}>
+                                <Text color={'gray.500'} fontSize={{ base: '15px', sm: '12px' }} textAlign='center'>
+                                    Explore a ferramenta sem precisar criar um login.
+                                </Text>
+                            </Stack>
                             <HStack justify={'center'} mt={8} >
                             <Box>
                                 <Link style={{ color: 'blue', textDecorationLine: 'underline', fontSize: '15px' }}

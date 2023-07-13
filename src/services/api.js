@@ -66,3 +66,7 @@ export const updateUserPremium = async() =>{
 export const createSession = async (email, password) =>{
     return api.post('/login', {email, password})
 };
+
+export const createTestSession = async (email, password) =>{
+    return api.post('/login', {email:process.env.REACT_APP_TEST_LOGIN, password:process.env.REACT_APP_TEST_PASSWORD})
+};
